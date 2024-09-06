@@ -1,25 +1,32 @@
+// src/App.tsx
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import './App.css'; // Import your custom CSS
+import PowerFactor from './pages/PowerFactor';
+import PhaseAngle from './pages/PhaseAngle';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <header className="App-header">
+          <nav>
+            <Link to="/powerfactor" className="App-link">
+              Power factor
+            </Link>
+            <Link to="/angle" className="App-link">
+              Phase angle
+            </Link>
+          </nav>
+        </header>
+        <main className="main-content">
+          <Routes>
+            <Route path="/powerfactor" element={<PowerFactor />} />
+            <Route path="/angle" element={<PhaseAngle />} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
   );
 }
 
