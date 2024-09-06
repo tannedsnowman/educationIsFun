@@ -196,16 +196,19 @@ const PowerFactor = () => {
           CurrentAmplitude={Sload / 5}
           VoltageAmplitude={240 / 5}
           phaseDifference={Math.acos(Pload / Sload)}
+          height={300}
         />
         <ACWaveDiagram
           CurrentAmplitude={Spv / 5}
           VoltageAmplitude={240 / 5}
           phaseDifference={Math.acos(Ppv / Spv)}
+          height={300}
         />
         <ACWaveDiagram
           CurrentAmplitude={Sgrid / 5}
           VoltageAmplitude={240 / 5}
           phaseDifference={Math.acos(Pgrid / Sgrid)}
+          height={300}
         />
       </div>
     </div>

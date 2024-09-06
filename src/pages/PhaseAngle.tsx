@@ -94,6 +94,7 @@ const PhaseAngle = () => {
           VoltageAmplitude={voltage / 2}
           phaseDifference={(Math.PI / 180) * phase}
           showPower={true}
+          height={800}
         />
       </div>
     </div>

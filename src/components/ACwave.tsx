@@ -5,6 +5,7 @@ interface ACWaveDiagramProps {
   CurrentAmplitude: number;
   phaseDifference: number;
   showPower?: boolean;
+  height?: number | 800;
 }
 
 const ACWaveDiagram: React.FC<ACWaveDiagramProps> = ({
@@ -12,6 +13,7 @@ const ACWaveDiagram: React.FC<ACWaveDiagramProps> = ({
   CurrentAmplitude,
   phaseDifference,
   showPower,
+  height,
 }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
@@ -91,7 +93,7 @@ const colorToRgba = (color: string, alpha: number) => {
     voltageAmplitude: number,
     currentAmplitude: number,
     color: string,
-    phaseDifference: number
+    phaseDifference: number,
   ) => {
     const canvasWidth = ctx.canvas.width;
     const canvasHeight = ctx.canvas.height;
@@ -127,7 +129,7 @@ const colorToRgba = (color: string, alpha: number) => {
       }}
       ref={canvasRef}
       width={1200}
-      height={800}
+      height={height}
     />
   );
 };
