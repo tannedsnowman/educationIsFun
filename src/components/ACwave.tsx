@@ -106,7 +106,7 @@ const colorToRgba = (color: string, alpha: number) => {
       const voltage = voltageAmplitude * Math.sin(2 * Math.PI * 0.002 * t);
       const current =
         currentAmplitude * Math.sin(2 * Math.PI * 0.002 * t + phaseDifference);
-      const power = (voltage * current) / 20 + canvasHeight / 2;
+      const power = (voltage * (-1)*current) / 20 + canvasHeight / 2;
       ctx.lineTo(t, power);
     }
     ctx.stroke();
